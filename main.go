@@ -1,6 +1,10 @@
 package main
 
 import (
+	"log"
+	"os"
+
+	"github.com/ChaotenHG/filebased-template/logo"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -8,11 +12,19 @@ import (
 func main() {
 	e := echo.New()
 
-	// Middleware
 	e.Use(middleware.Logger())
-	e.Use(middleware.Recover())
 
 	registerRoutes(e)
 
-	e.Logger.Fatal(e.Start(":3000"))
+	if err := logo.LoadConfig(os.Getenv("LOGO_PROXY_URL"), os.Getenv("LOGO_PROXY_PASSWORD")); err != nil {
+		log.Println(err)
+	}
+
+	var port = os.Getenv("LOGO_PROXY_PORT")
+
+	if port == "" {
+		port = "3000"
+	}
+
+	e.Logger.Fatal(e.Start(":" + port))
 }

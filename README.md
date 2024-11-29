@@ -1,12 +1,19 @@
-# Template for Filebased
+# Logo Proxy
 
-This document serves as a template for [Filebased](https://github.com/ChaotenHG/filebased).
+a simple proxy to interact with the siemens logo over a rest server
+
+## Available environment variables
+
+```
+export LOGO_PROXY_URL=http://192.168.178.42
+export LOGO_PROXY_PASSWORD=12345678
+export LOGO_PROXY_PORT=3000
+
+```
 
 ## Usage Instructions
 
-To get started, you can create a new repository using this template by clicking the **“Use this template”** button on the GitHub page. This will allow you to quickly set up your own instance of the Filebased project.
-
-Next, install [Air](https://github.com/air-verse/air) if you haven’t done so already. Once installed, you can easily run the application with the following command:
+install [Air](https://github.com/air-verse/air) if you haven’t done so already. Once installed, you can easily run the application with the following command:
 
 ```sh
 air
