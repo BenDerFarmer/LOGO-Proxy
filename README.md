@@ -8,6 +8,7 @@ a simple proxy to interact with the siemens logo over a rest server
 export LOGO_PROXY_URL=http://192.168.178.42
 export LOGO_PROXY_PASSWORD=12345678
 export LOGO_PROXY_PORT=3000
+export LOGO_PROXY_WEBUI=true
 
 ```
 
